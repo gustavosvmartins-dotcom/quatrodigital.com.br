@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saúde da Mulher - Quatro Digital</title>
+  <meta name="description" content="Conteúdos sobre Saúde da Mulher em Quatro Digital." />
+  <link rel="stylesheet" href="/css/blog-theme.css" />
+  <style>
+    .container {
+      width: min(100% - 32px, 1120px);
+      margin: 0 auto;
+    }
+
+    .blog-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .blog-header__top {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .blog-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .blog-logo__image { height: 40px; width: auto; display: block; }
+
+    .blog-main-nav { display: none; }
+
+    .blog-nav-dropdown { position: relative; }
+    .dropdown-toggle {
+      display: flex; align-items: center; gap: 4px;
+      color: #3d3d3d; font-size: 14px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0; font-family: inherit;
+    }
+    .dropdown-toggle:hover { color: #36b1df; }
+    .dropdown-toggle::after { content: "▾"; font-size: 12px; transition: transform 0.2s ease; }
+    .dropdown-toggle.active::after { transform: rotate(180deg); }
+    .dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 12px); right: 0;
+      background: #fff; border: 1px solid #e0e0e0; border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08); min-width: 200px; z-index: 100; overflow: hidden;
+    }
+    .dropdown-menu.open { display: block; }
+    .dropdown-menu a {
+      display: block; padding: 12px 16px; color: #3d3d3d;
+      font-size: 14px; font-weight: 500; text-transform: uppercase;
+      text-decoration: none; border-bottom: 1px solid #f0f0f0; transition: background 0.2s ease;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: #f5fbff; color: #36b1df; }
+
+    .blog-menu-toggle {
+      display: flex; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .blog-menu-toggle span { display: block; width: 24px; height: 2px; background: #3d3d3d; border-radius: 2px; transition: all 0.3s ease; }
+    .blog-menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .blog-menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .blog-menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .blog-mobile-menu { display: none; flex-direction: column; background: #fff; border-top: 1px solid #e0e0e0; padding: 16px 0; }
+    .blog-mobile-menu.open { display: flex; }
+    .blog-mobile-menu a { padding: 12px 16px; color: #3d3d3d; font-size: 14px; font-weight: 600; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid #f0f0f0; }
+    .blog-mobile-menu a:last-child { border-bottom: none; }
+    .blog-mobile-menu a:hover { color: #36b1df; }
+
+    .category-page { padding: 32px 0 56px; }
+
+    .breadcrumbs {
+      margin: 0 0 24px;
+      color: #7a7a7a;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .breadcrumbs a { color: inherit; text-decoration: none; }
+
+    .category-header {
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .category-header h1 {
+      color: #3d3d3d;
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .category-header p {
+      color: #7a7a7a;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .category-card {
+      display: grid;
+      grid-template-columns: 140px minmax(0, 1fr);
+      gap: 20px;
+      text-decoration: none;
+      color: inherit;
+      align-items: start;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .category-card:last-child { border-bottom: none; }
+
+    .category-card__image {
+      width: 140px;
+      height: 94px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #f5f5f5;
+      flex-shrink: 0;
+    }
+
+    .category-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .category-card__badge {
+      color: #36b1df;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .category-card__title {
+      color: #3d3d3d;
+      font-size: 18px;
+      line-height: 26px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .category-card__excerpt {
+      color: #7a7a7a;
+      font-size: 14px;
+      line-height: 22px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .category-card__meta {
+      margin-top: 8px;
+      color: #a3a3a3;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .empty-message {
+      color: #7a7a7a;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    #footer {
+      background: #ebf0f4;
+      margin-top: 64px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    #footer .footer-tuasaude { padding: 40px 0 0; }
+
+    #footer .footer-wrapper {
+      display: grid; grid-template-columns: 1fr; gap: 24px;
+    }
+
+    .footer-logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+    .footer-logo__image { height: 36px; width: auto; display: block; }
+    .footer-text { color: #3d3d3d; font-size: 14px; line-height: 22px; max-width: 640px; }
+    .footer-menu ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-menu ul li a { color: #3d3d3d; font-size: 14px; line-height: 20px; text-decoration: none; }
+    .footer-group { border-top: 1px solid #e0e0e0; margin-top: 8px; }
+    .footer-update-copy { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 20px 0; color: #7a7a7a; font-size: 12px; }
+    .footer-update-copy .dot { width: 4px; height: 4px; border-radius: 50%; background: #36b1df; }
+
+    @media screen and (min-width: 768px) {
+      .category-grid { grid-template-columns: 1fr 1fr; }
+      .category-card { grid-template-columns: 1fr; }
+      .category-card__image { width: 100%; height: 180px; }
+    }
+
+    @media screen and (min-width: 1050px) {
+      .blog-main-nav { display: flex; align-items: center; gap: 32px; flex: 1; justify-content: center; }
+      .blog-main-nav a { color: #3d3d3d; text-decoration: none; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s ease; }
+      .blog-main-nav a:hover { color: #36b1df; }
+      .blog-menu-toggle { display: none; }
+      .blog-mobile-menu { display: none !important; }
+      .category-grid { grid-template-columns: 1fr 1fr 1fr; }
+      #footer .footer-wrapper { grid-template-columns: 1.4fr 1fr 1fr; align-items: start; }
+    }
+  </style>
+  <link rel="icon" type="image/webp" href="/img/favicon-medico.webp">
+  <link rel="shortcut icon" href="/img/favicon-medico.webp">
+  <link rel="apple-touch-icon" href="/img/favicon-medico.webp">
+</head>
+<body>
+  <header class="blog-header">
+    <div class="container blog-header__top">
+      <a href="https://quatrodigital.com.br" class="blog-logo">
+        <img src="/img/logo-blog.webp" alt="Quatro Digital" class="blog-logo__image">
+      </a>
+      <nav class="blog-main-nav">
+        <a href="/categoria/saude/">Saúde</a>
+        <a href="/categoria/bem-estar/">Bem-estar</a>
+        <a href="/categoria/noticias/">Notícias</a>
+        <div class="blog-nav-dropdown">
+          <button class="dropdown-toggle" onclick="toggleDropdown(this)">Mais</button>
+          <div class="dropdown-menu">
+            <a href="/categoria/doencas/">Doenças</a>
+            <a href="/categoria/saude-da-mulher/">Saúde da Mulher</a>
+            <a href="/categoria/saude-mental/">Saúde Mental</a>
+            <a href="/categoria/saude-bucal/">Saúde Bucal</a>
+            <a href="/categoria/nutricao/">Nutrição</a>
+            <a href="/categoria/fitness/">Fitness</a>
+          </div>
+        </div>
+      </nav>
+      <button class="blog-menu-toggle" onclick="toggleMobileMenu(this)" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="blog-mobile-menu">
+      <a href="/categoria/saude/">Saúde</a>
+      <a href="/categoria/bem-estar/">Bem-estar</a>
+      <a href="/categoria/noticias/">Notícias</a>
+      <a href="/categoria/doencas/">Doenças</a>
+      <a href="/categoria/saude-da-mulher/">Saúde da Mulher</a>
+      <a href="/categoria/saude-mental/">Saúde Mental</a>
+      <a href="/categoria/saude-bucal/">Saúde Bucal</a>
+      <a href="/categoria/nutricao/">Nutrição</a>
+      <a href="/categoria/fitness/">Fitness</a>
+    </div>
+  </header>
+
+  <script>
+    function toggleDropdown(btn) {
+      const menu = btn.nextElementSibling;
+      btn.classList.toggle('active');
+      menu.classList.toggle('open');
+      document.addEventListener('click', function closeMenu(e) {
+        if (!btn.parentElement.contains(e.target)) {
+          menu.classList.remove('open');
+          btn.classList.remove('active');
+          document.removeEventListener('click', closeMenu);
+        }
+      });
+    }
+    function toggleMobileMenu(btn) {
+      const menu = document.querySelector('.blog-mobile-menu');
+      btn.classList.toggle('active');
+      menu.classList.toggle('open');
+    }
+  </script>
+
+  <main class="category-page">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/">Início</a> / Saúde da Mulher
+      </div>
+
+      <div class="category-header">
+        <h1>Saúde da Mulher</h1>
+        <p>Confira os conteúdos mais recentes sobre Saúde da Mulher.</p>
+      </div>
+
+      <div id="category-posts" class="category-grid">
+        <p class="empty-message">Carregando conteúdos...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-tuasaude">
+      <div class="container footer-wrapper">
+        <a href="/" class="footer-logo">
+          <img src="/img/logo-blog.webp" alt="Quatro Digital" class="footer-logo__image">
+        </a>
+        <div class="footer-text">
+          Conteúdos informativos, atualizados e organizados para facilitar sua navegação e ajudar na busca por informação.
+        </div>
+        <div class="footer-menu">
+          <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/sobre/">Sobre</a></li>
+            <li><a href="/contato/">Contato</a></li>
+            <li><a href="/politica-de-privacidade/">Política de privacidade</a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <div class="footer-update-copy">
+            <span>© 2026 Quatro Digital</span>
+            <span class="dot"></span>
+            <span>Todos os direitos reservados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function escapeHtml(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    async function loadCategoryPosts() {
+      const container = document.getElementById('category-posts');
+      const categoryName = 'Saúde da Mulher';
+
+      try {
+        const response = await fetch('/data/recent-posts.json', { cache: 'no-cache' });
+        if (!response.ok) throw new Error('Erro ao carregar posts');
+        const allPosts = await response.json();
+
+        const filtered = allPosts
+          .filter(post => String(post.category || '').toLowerCase() === categoryName.toLowerCase())
+          .slice(0, 12);
+
+        if (!filtered.length) {
+          container.innerHTML = '<p class="empty-message">Nenhum conteúdo encontrado nesta categoria.</p>';
+          return;
+        }
+
+        container.innerHTML = filtered.map(post => `
+          <a href="${escapeHtml(post.url)}" class="category-card">
+            <div class="category-card__image">
+              ${post.cover_image
+                ? `<img src="${escapeHtml(post.cover_image)}" alt="${escapeHtml(post.cover_image_alt || post.title)}" loading="lazy">`
+                : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#a3a3a3;font-size:12px;">Sem imagem</div>`
+              }
+            </div>
+            <div>
+              <div class="category-card__badge">${escapeHtml(post.category || '')}</div>
+              <div class="category-card__title">${escapeHtml(post.title)}</div>
+              <div class="category-card__excerpt">${escapeHtml(post.excerpt || '')}</div>
+              <div class="category-card__meta">${escapeHtml(post.date || '')}</div>
+            </div>
+          </a>
+        `).join('');
+
+      } catch (error) {
+        console.error(error);
+        container.innerHTML = '<p class="empty-message">Não foi possível carregar os conteúdos.</p>';
+      }
+    }
+
+    loadCategoryPosts();
+  </script>
+</body>
+</html>
