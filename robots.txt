@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://quatrodigital.com.br/sitemap.xml
