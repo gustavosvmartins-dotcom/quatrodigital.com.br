@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato - Quatro Digital</title>
+  <meta name="description" content="Entre em contato com o Quatro Digital." />
+  <link rel="stylesheet" href="/css/blog-theme.css" />
+  <link rel="icon" type="image/webp" href="/img/favicon-medico.webp">
+  <link rel="shortcut icon" href="/img/favicon-medico.webp">
+  <link rel="apple-touch-icon" href="/img/favicon-medico.webp">
+  <style>
+    .container {
+      width: min(100% - 32px, 1120px);
+      margin: 0 auto;
+    }
+    .page-content {
+      max-width: 760px;
+      margin: 48px auto 80px;
+    }
+    .page-content h1 {
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 600;
+      color: #3d3d3d;
+      margin-bottom: 24px;
+    }
+    .page-content p {
+      font-size: 16px;
+      line-height: 26px;
+      color: #3d3d3d;
+      margin-bottom: 18px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #36b1df;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 32px;
+    }
+    .back-link::before { content: "←"; }
+    .contact-info {
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 32px;
+    }
+    .contact-info p {
+      margin-bottom: 8px;
+    }
+    #footer {
+      background: #ebf0f4;
+      margin-top: 64px;
+      border-top: 1px solid #e0e0e0;
+    }
+    .footer-tuasaude { padding: 40px 0 0; }
+    .footer-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .footer-text {
+      color: #3d3d3d;
+      font-size: 14px;
+      line-height: 22px;
+    }
+    .footer-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-menu ul li a {
+      color: #3d3d3d;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .footer-group { border-top: 1px solid #e0e0e0; margin-top: 8px; }
+    .footer-update-copy {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 0;
+      color: #7a7a7a;
+      font-size: 12px;
+    }
+    .footer-update-copy .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #36b1df;
+    }
+    @media screen and (min-width: 1050px) {
+      .footer-wrapper {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        align-items: start;
+      }
+    }
+  </style>
+</head>
+<body>
+ <header class="blog-header">
+  <div class="blog-header__top">
+    <a href="https://quatrodigital.com.br" class="blog-logo">
+      <img src="/img/logo-blog.webp" alt="Quatro Digital" class="blog-logo__image">
+    </a>
+
+    <nav class="blog-main-nav">
+      <a href="/categoria/saude/">Saúde</a>
+      <a href="/categoria/bem-estar/">Bem-estar</a>
+      <a href="/categoria/noticias/">Notícias</a>
+      <div class="blog-nav-dropdown">
+        <button class="dropdown-toggle" onclick="toggleDropdown(this)">Mais</button>
+        <div class="dropdown-menu">
+          <a href="/categoria/doencas/">Doenças</a>
+          <a href="/categoria/saude-da-mulher/">Saúde da Mulher</a>
+          <a href="/categoria/saude-mental/">Saúde Mental</a>
+          <a href="/categoria/saude-bucal/">Saúde Bucal</a>
+          <a href="/categoria/nutricao/">Nutrição</a>
+          <a href="/categoria/fitness/">Fitness</a>
+        </div>
+      </div>
+    </nav>
+
+    <button class="blog-menu-toggle" onclick="toggleMobileMenu(this)" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="blog-mobile-menu">
+    <a href="/categoria/saude/">Saúde</a>
+    <a href="/categoria/bem-estar/">Bem-estar</a>
+    <a href="/categoria/noticias/">Notícias</a>
+    <a href="/categoria/doencas/">Doenças</a>
+    <a href="/categoria/saude-da-mulher/">Saúde da Mulher</a>
+    <a href="/categoria/saude-mental/">Saúde Mental</a>
+    <a href="/categoria/saude-bucal/">Saúde Bucal</a>
+    <a href="/categoria/nutricao/">Nutrição</a>
+    <a href="/categoria/fitness/">Fitness</a>
+  </div>
+</header>
+
+<script>
+  function toggleDropdown(btn) {
+    const menu = btn.nextElementSibling;
+    btn.classList.toggle('active');
+    menu.classList.toggle('open');
+    document.addEventListener('click', function closeMenu(e) {
+      if (!btn.parentElement.contains(e.target)) {
+        menu.classList.remove('open');
+        btn.classList.remove('active');
+        document.removeEventListener('click', closeMenu);
+      }
+    });
+  }
+
+  function toggleMobileMenu(btn) {
+    const menu = document.querySelector('.blog-mobile-menu');
+    btn.classList.toggle('active');
+    menu.classList.toggle('open');
+  }
+</script>
+
+  <main class="container">
+    <div class="page-content">
+      <a href="https://quatrodigital.com.br" class="back-link">Voltar para a home</a>
+      <h1>Contato</h1>
+      <p>Tem alguma dúvida, sugestão ou quer entrar em contato com a equipe do Quatro Digital? Estamos à disposição para ajudar.</p>
+      <p>Utilizamos as informações de contato apenas para responder às suas mensagens e nunca compartilhamos seus dados com terceiros.</p>
+      <p> Entre em contato pelo email contato@quatrodigital.com.br ou gustavosvmartins@gmail.com com o motivo do seu contato e responderemos o quanto antes.</p>
+      <div class="contact-info">
+        <p><strong>Quatro Digital</strong></p>
+        <p>Site: <a href="https://quatrodigital.com.br">quatrodigital.com.br</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-tuasaude">
+      <div class="container footer-wrapper">
+        <a href="https://quatrodigital.com.br" class="footer-logo">
+          <img src="/img/logo-blog.webp" alt="Quatro Digital" class="footer-logo__image">
+        </a>
+        <div class="footer-text">
+          Conteúdos informativos, atualizados e organizados para facilitar sua navegação e ajudar na busca por informação.
+        </div>
+        <div class="footer-menu">
+          <ul>
+            <li><a href="https://quatrodigital.com.br">Início</a></li>
+            <li><a href="/sobre/">Sobre</a></li>
+            <li><a href="/contato/">Contato</a></li>
+            <li><a href="/politica-de-privacidade/">Política de privacidade</a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <div class="footer-update-copy">
+            <span>© 2026 Quatro Digital</span>
+            <span class="dot"></span>
+            <span>Todos os direitos reservados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
