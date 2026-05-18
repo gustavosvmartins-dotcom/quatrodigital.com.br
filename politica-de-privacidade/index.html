@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade - Quatro Digital</title>
+  <meta name="description" content="Política de privacidade do Quatro Digital." />
+  <link rel="stylesheet" href="/css/blog-theme.css" />
+  <link rel="icon" type="image/webp" href="/img/favicon-medico.webp">
+  <link rel="shortcut icon" href="/img/favicon-medico.webp">
+  <link rel="apple-touch-icon" href="/img/favicon-medico.webp">
+  <style>
+    .container {
+      width: min(100% - 32px, 1120px);
+      margin: 0 auto;
+    }
+    .page-content {
+      max-width: 760px;
+      margin: 48px auto 80px;
+    }
+    .page-content h1 {
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 600;
+      color: #3d3d3d;
+      margin-bottom: 24px;
+    }
+    .page-content h2 {
+      font-size: 22px;
+      line-height: 30px;
+      font-weight: 600;
+      color: #3d3d3d;
+      margin: 32px 0 14px;
+    }
+    .page-content p {
+      font-size: 16px;
+      line-height: 26px;
+      color: #3d3d3d;
+      margin-bottom: 18px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #36b1df;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 32px;
+    }
+    .back-link::before { content: "←"; }
+    #footer {
+      background: #ebf0f4;
+      margin-top: 64px;
+      border-top: 1px solid #e0e0e0;
+    }
+    .footer-tuasaude { padding: 40px 0 0; }
+    .footer-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .footer-text {
+      color: #3d3d3d;
+      font-size: 14px;
+      line-height: 22px;
+    }
+    .footer-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-menu ul li a {
+      color: #3d3d3d;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .footer-group { border-top: 1px solid #e0e0e0; margin-top: 8px; }
+    .footer-update-copy {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 0;
+      color: #7a7a7a;
+      font-size: 12px;
+    }
+    .footer-update-copy .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #36b1df;
+    }
+    @media screen and (min-width: 1050px) {
+      .footer-wrapper {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        align-items: start;
+      }
+    }
+  </style>
+</head>
+<body>
+ <header class="blog-header">
+  <div class="blog-header__top">
+    <a href="https://quatrodigital.com.br" class="blog-logo">
+      <img src="/img/logo-blog.webp" alt="Quatro Digital" class="blog-logo__image">
+    </a>
+
+    <nav class="blog-main-nav">
+      <a href="/categoria/saude/">Saúde</a>
+      <a href="/categoria/bem-estar/">Bem-estar</a>
+      <a href="/categoria/noticias/">Notícias</a>
+      <div class="blog-nav-dropdown">
+        <button class="dropdown-toggle" onclick="toggleDropdown(this)">Mais</button>
+        <div class="dropdown-menu">
+          <a href="/categoria/doencas/">Doenças</a>
+          <a href="/categoria/saude-da-mulher/">Saúde da Mulher</a>
+          <a href="/categoria/saude-mental/">Saúde Mental</a>
+          <a href="/categoria/saude-bucal/">Saúde Bucal</a>
+          <a href="/categoria/nutricao/">Nutrição</a>
+          <a href="/categoria/fitness/">Fitness</a>
+        </div>
+      </div>
+    </nav>
+
+    <button class="blog-menu-toggle" onclick="toggleMobileMenu(this)" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="blog-mobile-menu">
+    <a href="/categoria/saude/">Saúde</a>
+    <a href="/categoria/bem-estar/">Bem-estar</a>
+    <a href="/categoria/noticias/">Notícias</a>
+    <a href="/categoria/doencas/">Doenças</a>
+    <a href="/categoria/saude-da-mulher/">Saúde da Mulher</a>
+    <a href="/categoria/saude-mental/">Saúde Mental</a>
+    <a href="/categoria/saude-bucal/">Saúde Bucal</a>
+    <a href="/categoria/nutricao/">Nutrição</a>
+    <a href="/categoria/fitness/">Fitness</a>
+  </div>
+</header>
+
+<script>
+  function toggleDropdown(btn) {
+    const menu = btn.nextElementSibling;
+    btn.classList.toggle('active');
+    menu.classList.toggle('open');
+    document.addEventListener('click', function closeMenu(e) {
+      if (!btn.parentElement.contains(e.target)) {
+        menu.classList.remove('open');
+        btn.classList.remove('active');
+        document.removeEventListener('click', closeMenu);
+      }
+    });
+  }
+
+  function toggleMobileMenu(btn) {
+    const menu = document.querySelector('.blog-mobile-menu');
+    btn.classList.toggle('active');
+    menu.classList.toggle('open');
+  }
+</script>
+
+  <main class="container">
+    <div class="page-content">
+      <a href="https://quatrodigital.com.br" class="back-link">Voltar para a home</a>
+      <h1>Política de Privacidade</h1>
+      <p>Esta Política de Privacidade descreve como o <a href="https://quatrodigital.com.br"><strong>Quatro Digital</strong></a> coleta, usa e protege as informações dos usuários que acessam o site <a href="https://quatrodigital.com.br">quatrodigital.com.br</a>.</p>
+
+      <h2>1. Informações coletadas</h2>
+      <p>Podemos coletar informações não pessoais automaticamente, como tipo de navegador, páginas visitadas e tempo de permanência no site, com o objetivo de melhorar a experiência do usuário.</p>
+
+      <h2>2. Uso das informações</h2>
+      <p>As informações coletadas são utilizadas exclusivamente para melhorar o funcionamento do site, analisar padrões de uso e oferecer conteúdos mais relevantes aos nossos leitores.</p>
+
+      <h2>3. Cookies</h2>
+      <p>Este site pode utilizar cookies para melhorar a experiência de navegação. Os cookies são pequenos arquivos armazenados no seu dispositivo que nos ajudam a lembrar suas preferências. Você pode desativar os cookies nas configurações do seu navegador, mas isso pode afetar a funcionalidade do site.</p>
+
+      <h2>4. Compartilhamento de informações</h2>
+      <p>Não vendemos, trocamos ou transferimos suas informações pessoais para terceiros. Isso não inclui parceiros confiáveis que nos auxiliam na operação do site, desde que concordem em manter essas informações confidenciais.</p>
+
+      <h2>5. Links externos</h2>
+      <p>Nosso site pode conter links para outros sites. Não nos responsabilizamos pelas práticas de privacidade desses sites e recomendamos que você leia as políticas de privacidade de cada site que visitar.</p>
+
+      <h2>6. Segurança</h2>
+      <p>Adotamos medidas de segurança adequadas para proteger suas informações contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+
+      <h2>7. Alterações nesta política</h2>
+      <p>Reservamo-nos o direito de atualizar esta Política de Privacidade a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação no site. Recomendamos que você revise esta página periodicamente.</p>
+
+      <h2>8. Contato</h2>
+      <p>Se tiver dúvidas sobre esta Política de Privacidade, entre em contato conosco através da nossa <a href="/contato/">página de contato</a>.</p>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-tuasaude">
+      <div class="container footer-wrapper">
+        <a href="https://quatrodigital.com.br" class="footer-logo">
+          <img src="/img/logo-blog.webp" alt="Quatro Digital" class="footer-logo__image">
+        </a>
+        <div class="footer-text">
+          Conteúdos informativos, atualizados e organizados para facilitar sua navegação e ajudar na busca por informação.
+        </div>
+        <div class="footer-menu">
+          <ul>
+            <li><a href="https://quatrodigital.com.br">Início</a></li>
+            <li><a href="/sobre/">Sobre</a></li>
+            <li><a href="/contato/">Contato</a></li>
+            <li><a href="/politica-de-privacidade/">Política de privacidade</a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <div class="footer-update-copy">
+            <span>© 2026 Quatro Digital</span>
+            <span class="dot"></span>
+            <span>Todos os direitos reservados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
