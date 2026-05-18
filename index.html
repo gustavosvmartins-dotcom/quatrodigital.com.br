@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html data-big-menu="1" lang="pt-BR" style="--header-height: 124px;">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quatro Digital</title>
+  <meta name="description" content="Conteúdos sobre bem-estar, nutrição, saúde mental, saúde bucal, saúde da mulher, doenças, notícias e tendências." />
+  <link rel="stylesheet" href="/css/blog-theme.css" />
+  <style>
+    .container {
+      width: min(100% - 32px, 1120px);
+      margin: 0 auto;
+    }
+
+    .homepage-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--white, #fff);
+      border-bottom: 1px solid var(--gray-20, #e0e0e0);
+    }
+
+    .homepage-header__top {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .homepage-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--gray-100, #3d3d3d);
+      flex-shrink: 0;
+    }
+
+    .homepage-logo__icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #36b1df 0, #1cc5af 100%);
+      position: relative;
+    }
+
+    .homepage-logo__icon::before,
+    .homepage-logo__icon::after {
+      content: "";
+      position: absolute;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    .homepage-logo__icon::before {
+      width: 14px;
+      height: 4px;
+      left: 9px;
+      top: 14px;
+    }
+
+    .homepage-logo__icon::after {
+      width: 4px;
+      height: 14px;
+      left: 14px;
+      top: 9px;
+    }
+
+    .homepage-logo__text {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+      color: #36b1df;
+    }
+
+    .homepage-logo__text strong {
+      font-weight: 600;
+    }
+
+    .homepage-main-nav {
+      display: none;
+    }
+
+    .site-title-wrapper {
+      margin: 24px auto 28px;
+      max-width: 760px;
+    }
+
+    .site-title-wrapper .site-title {
+      color: var(--gray-50, #a3a3a3);
+      text-align: center;
+      font-size: 12px;
+      line-height: 16px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .homepage-section {
+      margin-bottom: 56px;
+    }
+
+    .homepage-featured-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .hero-article {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .hero-article .article-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 508 / 308;
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--gray-10, #f5f5f5);
+      margin-bottom: 16px;
+    }
+
+    .hero-article .article-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-article .article-badge {
+      margin-bottom: 12px;
+    }
+
+    .hero-article .article-title {
+      color: var(--gray-100, #3d3d3d);
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .hero-article p {
+      color: var(--gray-100, #3d3d3d);
+      font-size: 16px;
+      line-height: 26px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .topic-block {
+      border-top: 1px solid var(--gray-20, #e0e0e0);
+      padding-top: 20px;
+    }
+
+    .topic-title {
+      margin-bottom: 24px;
+    }
+
+    .topic-title__title {
+      color: var(--gray-100, #3d3d3d);
+      font-size: 26px;
+      line-height: 34px;
+      font-weight: 600;
+    }
+
+    .homepage-topic-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px 24px;
+    }
+
+    .topic-article {
+      display: grid;
+      grid-template-columns: 116px minmax(0, 1fr);
+      gap: 16px;
+      text-decoration: none;
+      color: inherit;
+      align-items: start;
+    }
+
+    .topic-article .article-image {
+      width: 116px;
+      height: 77px;
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--gray-10, #f5f5f5);
+      display: block;
+    }
+
+    .topic-article .article-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .topic-article .article-badge {
+      margin-bottom: 10px;
+    }
+
+    .topic-article .article-title {
+      color: var(--gray-100, #3d3d3d);
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .topic-article p {
+      color: var(--gray-100, #3d3d3d);
+      font-size: 14px;
+      line-height: 22px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .recent-block {
+      border-top: 1px solid var(--gray-20, #e0e0e0);
+      padding-top: 20px;
+    }
+
+    .recent-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0 30px;
+    }
+
+    .recent-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      padding: 20px 0 26px;
+      border-bottom: 1px solid var(--gray-20, #e0e0e0);
+    }
+
+    .recent-card .article-badge {
+      margin-bottom: 14px;
+    }
+
+    .recent-card .article-title {
+      color: var(--gray-100, #3d3d3d);
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .recent-card .article-date {
+      color: var(--gray-70, #7a7a7a);
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .recent-cta {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .recent-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-60, #36b1df);
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .recent-cta a::after {
+      content: "→";
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    #footer {
+      background: var(--footer-bg, #ebf0f4);
+      margin-top: 64px;
+      border-top: 1px solid var(--gray-20, #e0e0e0);
+    }
+
+    #footer .footer-tuasaude {
+      padding: 40px 0 0;
+    }
+
+    #footer .footer-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--gray-100, #3d3d3d);
+    }
+
+    .footer-logo__icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #36b1df 0, #1cc5af 100%);
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .footer-logo__icon::before,
+    .footer-logo__icon::after {
+      content: "";
+      position: absolute;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    .footer-logo__icon::before {
+      width: 12px;
+      height: 4px;
+      left: 8px;
+      top: 12px;
+    }
+
+    .footer-logo__icon::after {
+      width: 4px;
+      height: 12px;
+      left: 12px;
+      top: 8px;
+    }
+
+    .footer-logo__text {
+      color: #36b1df;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+    }
+
+    .footer-logo__text strong {
+      font-weight: 600;
+    }
+
+    .footer-text {
+      color: var(--gray-100, #3d3d3d);
+      font-size: 14px;
+      line-height: 22px;
+      max-width: 640px;
+    }
+
+    .footer-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-menu ul li a {
+      color: var(--gray-100, #3d3d3d);
+      font-size: 14px;
+      line-height: 20px;
+      text-decoration: none;
+    }
+
+    .footer-group {
+      border-top: 1px solid var(--gray-20, #e0e0e0);
+      margin-top: 8px;
+    }
+
+    .footer-update-copy {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 0;
+      color: var(--gray-70, #7a7a7a);
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .footer-update-copy .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--primary-60, #36b1df);
+    }
+
+    .loading-message,
+    .empty-message {
+      color: var(--gray-70, #7a7a7a);
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @media screen and (min-width: 1050px) {
+      .homepage-main-nav {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+        flex: 1;
+        justify-content: center;
+      }
+
+      .homepage-main-nav a {
+        color: var(--gray-100, #3d3d3d);
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
+      }
+
+      .homepage-featured-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .homepage-topic-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .recent-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      #footer .footer-wrapper {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        align-items: start;
+      }
+    }
+  </style>
+  <link rel="icon" type="image/webp" href="/img/favicon-medico.webp">
+<link rel="shortcut icon" href="/img/favicon-medico.webp">
+<link rel="apple-touch-icon" href="/img/favicon-medico.webp">
+</head>
+<body class="home-page">
+ <header class="blog-header">
+  <div class="blog-header__top">
+    <a href="https://quatrodigital.com.br" class="blog-logo">
+      <img src="/img/logo-blog.webp" alt="Quatro Digital" class="blog-logo__image">
+    </a>
+
+    <nav class="blog-main-nav">
+      <a href="/categoria/saude/">Saúde</a>
+      <a href="/categoria/bem-estar/">Bem-estar</a>
+      <a href="/categoria/noticias/">Notícias</a>
+      <div class="blog-nav-dropdown">
+        <button class="dropdown-toggle" onclick="toggleDropdown(this)">Mais</button>
+        <div class="dropdown-menu">
+          <a href="/categoria/doencas/">Doenças</a>
+          <a href="/categoria/saude-da-mulher/">Saúde da Mulher</a>
+          <a href="/categoria/saude-mental/">Saúde Mental</a>
+          <a href="/categoria/saude-bucal/">Saúde Bucal</a>
+          <a href="/categoria/nutricao/">Nutrição</a>
+          <a href="/categoria/fitness/">Fitness</a>
+        </div>
+      </div>
+    </nav>
+
+    <button class="blog-menu-toggle" onclick="toggleMobileMenu(this)" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="blog-mobile-menu">
+    <a href="/categoria/saude/">Saúde</a>
+    <a href="/categoria/bem-estar/">Bem-estar</a>
+    <a href="/categoria/noticias/">Notícias</a>
+    <a href="/categoria/doencas/">Doenças</a>
+    <a href="/categoria/saude-da-mulher/">Saúde da Mulher</a>
+    <a href="/categoria/saude-mental/">Saúde Mental</a>
+    <a href="/categoria/saude-bucal/">Saúde Bucal</a>
+    <a href="/categoria/nutricao/">Nutrição</a>
+    <a href="/categoria/fitness/">Fitness</a>
+  </div>
+</header>
+
+<script>
+  function toggleDropdown(btn) {
+    const menu = btn.nextElementSibling;
+    btn.classList.toggle('active');
+    menu.classList.toggle('open');
+    document.addEventListener('click', function closeMenu(e) {
+      if (!btn.parentElement.contains(e.target)) {
+        menu.classList.remove('open');
+        btn.classList.remove('active');
+        document.removeEventListener('click', closeMenu);
+      }
+    });
+  }
+
+  function toggleMobileMenu(btn) {
+    const menu = document.querySelector('.blog-mobile-menu');
+    btn.classList.toggle('active');
+    menu.classList.toggle('open');
+  }
+</script>
+
+  <main class="container">
+    <div class="site-title-wrapper">
+      <div class="site-title">Quatro Digital - CONTEÚDOS SOBRE SAÚDE, NUTRIÇÃO, BEM-ESTAR E QUALIDADE DE VIDA</div>
+    </div>
+
+    <section class="homepage-section">
+      <div id="hero-posts-grid" class="homepage-featured-grid">
+        <p class="loading-message">Carregando destaques...</p>
+      </div>
+    </section>
+
+    <section class="homepage-section topic-block">
+      <div class="topic-title topic-title__medium">
+        <h2 class="topic-title__title">Assuntos do momento</h2>
+      </div>
+
+      <div id="topic-posts-grid" class="homepage-topic-grid">
+        <p class="loading-message">Carregando assuntos do momento...</p>
+      </div>
+    </section>
+
+    <section class="homepage-section recent-block article-list-extra-small-content">
+      <nav>
+        <div class="topic-title topic-title__medium">
+          <h2 class="topic-title__title">Conteúdos mais recentes</h2>
+        </div>
+
+        <div id="recent-posts-grid" class="recent-grid">
+          <p class="loading-message">Carregando conteúdos mais recentes...</p>
+        </div>
+
+  
+      </nav>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-tuasaude">
+      <div class="container footer-wrapper">
+        <a href="/" class="footer-logo">
+  <img src="/img/logo-blog.webp" alt="Quatro Digital" class="footer-logo__image">
+</a>
+        <div class="footer-text">
+          Conteúdos informativos, atualizados e organizados para facilitar sua navegação e ajudar na busca por informação.
+        </div>
+
+        <div class="footer-menu">
+          <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/sobre/">Sobre</a></li>
+            <li><a href="/contato/">Contato</a></li>
+            <li><a href="/politica-de-privacidade/">Política de privacidade</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-group">
+          <div class="footer-update-copy">
+            <span>© 2026 Quatro Digital</span>
+            <span class="dot"></span>
+            <span>Todos os direitos reservados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    async function fetchJson(path) {
+      const response = await fetch(path, { cache: 'no-cache' });
+      if (!response.ok) throw new Error('Erro ao carregar ' + path);
+      return response.json();
+    }
+
+    function escapeHtml(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function formatDate(dateStr) {
+      if (!dateStr) return '';
+      return dateStr;
+    }
+
+    function renderHeroPosts(posts) {
+      const container = document.getElementById('hero-posts-grid');
+
+      if (!Array.isArray(posts) || !posts.length) {
+        container.innerHTML = '<p class="empty-message">Nenhum destaque encontrado.</p>';
+        return;
+      }
+
+      container.innerHTML = posts.slice(0, 2).map(post => `
+        <a class="hero-article" href="${escapeHtml(post.url)}">
+          <picture class="article-image">
+            ${post.cover_image
+              ? `<img src="${escapeHtml(post.cover_image)}" alt="${escapeHtml(post.cover_image_alt || post.title)}" loading="lazy">`
+              : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">Imagem</div>`
+            }
+          </picture>
+          <div class="article-badge">${escapeHtml(post.category || 'Categoria')}</div>
+          <h2 class="article-title">${escapeHtml(post.title)}</h2>
+          <p>${escapeHtml(post.excerpt || '')}</p>
+        </a>
+      `).join('');
+    }
+
+    function renderTopicPosts(posts) {
+      const container = document.getElementById('topic-posts-grid');
+
+      if (!Array.isArray(posts) || !posts.length) {
+        container.innerHTML = '<p class="empty-message">Nenhum conteúdo encontrado.</p>';
+        return;
+      }
+
+      container.innerHTML = posts.slice(0, 12).map(post => `
+        <a class="topic-article" href="${escapeHtml(post.url)}">
+          <picture class="article-image">
+            ${post.cover_image
+              ? `<img src="${escapeHtml(post.cover_image)}" alt="${escapeHtml(post.cover_image_alt || post.title)}" loading="lazy">`
+              : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">Imagem</div>`
+            }
+          </picture>
+          <div class="article-text">
+            <div class="article-badge">${escapeHtml(post.category || 'Categoria')}</div>
+            <h3 class="article-title">${escapeHtml(post.title)}</h3>
+            <p>${escapeHtml(post.excerpt || '')}</p>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    function renderRecentPosts(posts) {
+      const container = document.getElementById('recent-posts-grid');
+
+      if (!Array.isArray(posts) || !posts.length) {
+        container.innerHTML = '<p class="empty-message">Nenhum conteúdo recente encontrado.</p>';
+        return;
+      }
+
+      container.innerHTML = posts.slice(0, 6).map(post => `
+        <a class="recent-card" href="${escapeHtml(post.url)}">
+          <div class="article-badge">${escapeHtml(post.category || 'Categoria')}</div>
+          <h3 class="article-title">${escapeHtml(post.title)}</h3>
+          <div class="article-date">Criado em ${escapeHtml(formatDate(post.date || ''))}</div>
+        </a>
+      `).join('');
+    }
+
+    async function loadHomeData() {
+      try {
+        const [recentPosts, featuredPosts] = await Promise.all([
+          fetchJson('/data/recent-posts.json'),
+          fetchJson('/data/featured-posts.json')
+        ]);
+
+        const recent = Array.isArray(recentPosts) ? recentPosts : [];
+        const featured = Array.isArray(featuredPosts) ? featuredPosts : [];
+
+        const heroRecent = recent.slice(0, 2);
+        const otherRecent = recent.slice(2, 8);
+
+        renderHeroPosts(heroRecent);
+        renderTopicPosts(featured);
+        renderRecentPosts(otherRecent);
+      } catch (error) {
+        console.error(error);
+        document.getElementById('hero-posts-grid').innerHTML = '<p class="empty-message">Não foi possível carregar os destaques.</p>';
+        document.getElementById('topic-posts-grid').innerHTML = '<p class="empty-message">Não foi possível carregar os assuntos do momento.</p>';
+        document.getElementById('recent-posts-grid').innerHTML = '<p class="empty-message">Não foi possível carregar os conteúdos mais recentes.</p>';
+      }
+    }
+
+    loadHomeData();
+  </script>
+</body>
+</html>
