@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Como se preparar para uma cirurgia plástica: guia para pacientes</title>
+  <meta name="description" content="Veja como se preparar para uma cirurgia plástica com dicas práticas e seguras. Guia completo para pacientes. Leia e conquiste resultados melhores!" />
+  <link rel="stylesheet" href="/css/blog-theme.css" />
+  <style>
+    .container {
+      width: min(100% - 32px, 1120px);
+      margin: 0 auto;
+    }
+
+    .blog-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .blog-header__top {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .blog-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .blog-logo__image {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    .blog-main-nav {
+      display: none;
+    }
+
+    /* NAV DROPDOWN */
+    .blog-nav-dropdown { position: relative; }
+    .dropdown-toggle {
+      display: flex; align-items: center; gap: 4px;
+      color: #3d3d3d; font-size: 14px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0; font-family: inherit;
+    }
+    .dropdown-toggle:hover { color: #36b1df; }
+    .dropdown-toggle::after { content: "▾"; font-size: 12px; transition: transform 0.2s ease; }
+    .dropdown-toggle.active::after { transform: rotate(180deg); }
+    .dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 12px); right: 0;
+      background: #fff; border: 1px solid #e0e0e0; border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08); min-width: 200px; z-index: 100; overflow: hidden;
+    }
+    .dropdown-menu.open { display: block; }
+    .dropdown-menu a {
+      display: block; padding: 12px 16px; color: #3d3d3d;
+      font-size: 14px; font-weight: 500; text-transform: uppercase;
+      text-decoration: none; border-bottom: 1px solid #f0f0f0; transition: background 0.2s ease;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: #f5fbff; color: #36b1df; }
+
+    /* HAMBURGUER */
+    .blog-menu-toggle {
+      display: flex; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .blog-menu-toggle span { display: block; width: 24px; height: 2px; background: #3d3d3d; border-radius: 2px; transition: all 0.3s ease; }
+    .blog-menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .blog-menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .blog-menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* MOBILE MENU */
+    .blog-mobile-menu { display: none; flex-direction: column; background: #fff; border-top: 1px solid #e0e0e0; padding: 16px 0; }
+    .blog-mobile-menu.open { display: flex; }
+    .blog-mobile-menu a { padding: 12px 16px; color: #3d3d3d; font-size: 14px; font-weight: 600; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid #f0f0f0; }
+    .blog-mobile-menu a:last-child { border-bottom: none; }
+    .blog-mobile-menu a:hover { color: #36b1df; }
+
+    .blog-page {
+      padding: 24px 0 56px;
+    }
+
+    .breadcrumbs {
+      margin: 0 0 16px;
+      color: #7a7a7a;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .breadcrumbs a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+    }
+
+    .post-article { min-width: 0; }
+
+    .article-badge { margin-bottom: 14px; }
+
+    .post-title {
+      color: #3d3d3d;
+      font-size: 34px;
+      line-height: 42px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .post-excerpt {
+      color: #3d3d3d;
+      font-size: 18px;
+      line-height: 28px;
+      margin-bottom: 20px;
+    }
+
+    .post-meta {
+      color: #7a7a7a;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+
+    .post-cover {
+      margin-bottom: 24px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+
+    .post-cover img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .post-content { color: #3d3d3d; }
+
+    .post-content h1,
+    .post-content h2,
+    .post-content h3 {
+      color: #3d3d3d;
+      font-weight: 600;
+    }
+
+    .post-content h1 { font-size: 30px; line-height: 38px; margin: 0 0 18px; }
+    .post-content h2 { font-size: 26px; line-height: 34px; margin: 32px 0 14px; }
+    .post-content h3 { font-size: 22px; line-height: 30px; margin: 24px 0 12px; }
+
+    .post-content p,
+    .post-content li { font-size: 18px; line-height: 30px; }
+
+    .post-content p { margin-bottom: 18px; }
+    .post-content ul, .post-content ol { margin: 0 0 20px 22px; }
+    .post-content li { margin-bottom: 8px; }
+    .post-content a { color: #36b1df; text-decoration: underline; }
+    .post-content img { width: 100%; display: block; border-radius: 8px; margin: 24px 0; }
+    .post-content blockquote {
+      margin: 24px 0; padding: 16px 20px;
+      border-left: 4px solid #36b1df;
+      background: #f2f6f9; border-radius: 8px;
+    }
+
+    .post-footer {
+      margin-top: 32px; padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+      color: #7a7a7a; font-size: 14px; line-height: 20px;
+    }
+
+    .content-inline-related {
+      margin: 28px 0 26px; padding-left: 14px;
+      border-left: 4px solid #e67e22;
+      font-size: 16px; line-height: 24px;
+    }
+
+    .content-inline-related-label { font-weight: 700; color: #3d3d3d; }
+    .content-inline-related-link { color: #e67e22; font-weight: 600; text-decoration: underline; }
+
+    .post-bottom {
+      margin-top: 36px; border-top: 1px solid #e0e0e0; padding-top: 24px;
+    }
+
+    .section-title {
+      color: #3d3d3d; font-size: 26px; line-height: 34px;
+      font-weight: 600; margin-bottom: 20px;
+    }
+
+    .bottom-list, .sidebar-list { list-style: none; margin: 0; padding: 0; }
+
+    .bottom-item, .sidebar-item {
+      padding: 16px 0; border-bottom: 1px solid #e0e0e0;
+    }
+
+    .bottom-item:first-child, .sidebar-item:first-child { padding-top: 0; }
+    .bottom-item:last-child, .sidebar-item:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .bottom-link, .sidebar-link {
+      display: block; color: #3d3d3d;
+      font-size: 18px; line-height: 26px;
+      font-weight: 600; text-decoration: none;
+    }
+
+    .bottom-meta, .sidebar-meta {
+      display: block; margin-top: 6px;
+      color: #7a7a7a; font-size: 13px; line-height: 18px;
+    }
+
+    .post-sidebar { min-width: 0; }
+
+    .sidebar-block {
+      position: sticky; top: 100px;
+      border-top: 1px solid #e0e0e0; padding-top: 20px;
+    }
+
+    .loading-text, .empty-text { color: #7a7a7a; font-size: 14px; line-height: 20px; }
+
+    #footer {
+      background: #ebf0f4; margin-top: 64px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    #footer .footer-tuasaude { padding: 40px 0 0; }
+
+    #footer .footer-wrapper {
+      display: grid; grid-template-columns: 1fr; gap: 24px;
+    }
+
+    .footer-logo {
+      display: inline-flex; align-items: center;
+      gap: 10px; text-decoration: none;
+    }
+
+    .footer-logo__image { height: 36px; width: auto; display: block; }
+
+    .footer-text { color: #3d3d3d; font-size: 14px; line-height: 22px; max-width: 640px; }
+
+    .footer-menu ul {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+
+    .footer-menu ul li a { color: #3d3d3d; font-size: 14px; line-height: 20px; text-decoration: none; }
+
+    .footer-group { border-top: 1px solid #e0e0e0; margin-top: 8px; }
+
+    .footer-update-copy {
+      display: flex; flex-wrap: wrap; align-items: center;
+      gap: 10px; padding: 20px 0; color: #7a7a7a;
+      font-size: 12px; line-height: 16px;
+    }
+
+    .footer-update-copy .dot {
+      width: 4px; height: 4px; border-radius: 50%; background: #36b1df;
+    }
+
+    @media screen and (min-width: 1050px) {
+      .blog-main-nav {
+        display: flex; align-items: center; gap: 32px;
+        flex: 1; justify-content: center;
+      }
+
+      .blog-main-nav a {
+        color: #3d3d3d; text-decoration: none;
+        font-size: 14px; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 0.5px;
+        transition: color 0.2s ease;
+      }
+
+      .blog-main-nav a:hover { color: #36b1df; }
+
+      .blog-menu-toggle { display: none; }
+      .blog-mobile-menu { display: none !important; }
+
+      .page-grid {
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 48px;
+      }
+
+      #footer .footer-wrapper {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        align-items: start;
+      }
+    }
+  </style>
+  <link rel="icon" type="image/webp" href="/img/favicon-medico.webp">
+  <link rel="shortcut icon" href="/img/favicon-medico.webp">
+  <link rel="apple-touch-icon" href="/img/favicon-medico.webp">
+  <meta name="google-site-verification" content="K6_7IAESiUJr7YsapsuK99j94miWigcahmTvWXMf4fE" />
+</head>
+<body>
+  <header class="blog-header">
+    <div class="container blog-header__top">
+      <a href="https://quatrodigital.com.br" class="blog-logo">
+        <img src="/img/logo-blog.webp" alt="Quatro Digital" class="blog-logo__image">
+      </a>
+
+      <nav class="blog-main-nav">
+        <a href="/categoria/saude/">Saúde</a>
+        <a href="/categoria/bem-estar/">Bem-estar</a>
+        <a href="/categoria/noticias/">Notícias</a>
+        <div class="blog-nav-dropdown">
+          <button class="dropdown-toggle" onclick="toggleDropdown(this)">Mais</button>
+          <div class="dropdown-menu">
+            <a href="/categoria/doencas/">Doenças</a>
+            <a href="/categoria/saude-da-mulher/">Saúde da Mulher</a>
+            <a href="/categoria/saude-mental/">Saúde Mental</a>
+            <a href="/categoria/saude-bucal/">Saúde Bucal</a>
+            <a href="/categoria/nutricao/">Nutrição</a>
+            <a href="/categoria/fitness/">Fitness</a>
+          </div>
+        </div>
+      </nav>
+
+      <button class="blog-menu-toggle" onclick="toggleMobileMenu(this)" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="blog-mobile-menu">
+      <a href="/categoria/saude/">Saúde</a>
+      <a href="/categoria/bem-estar/">Bem-estar</a>
+      <a href="/categoria/noticias/">Notícias</a>
+      <a href="/categoria/doencas/">Doenças</a>
+      <a href="/categoria/saude-da-mulher/">Saúde da Mulher</a>
+      <a href="/categoria/saude-mental/">Saúde Mental</a>
+      <a href="/categoria/saude-bucal/">Saúde Bucal</a>
+      <a href="/categoria/nutricao/">Nutrição</a>
+      <a href="/categoria/fitness/">Fitness</a>
+    </div>
+  </header>
+
+  <script>
+    function toggleDropdown(btn) {
+      const menu = btn.nextElementSibling;
+      btn.classList.toggle('active');
+      menu.classList.toggle('open');
+      document.addEventListener('click', function closeMenu(e) {
+        if (!btn.parentElement.contains(e.target)) {
+          menu.classList.remove('open');
+          btn.classList.remove('active');
+          document.removeEventListener('click', closeMenu);
+        }
+      });
+    }
+
+    function toggleMobileMenu(btn) {
+      const menu = document.querySelector('.blog-mobile-menu');
+      btn.classList.toggle('active');
+      menu.classList.toggle('open');
+    }
+  </script>
+
+  <main class="blog-page">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/">Início</a> / <a href="/categoria/bem-estar/">Bem Estar</a>
+      </div>
+
+      <div class="page-grid">
+        <article class="post-article">
+          <div class="article-badge">Bem Estar</div>
+
+          <h1 class="post-title">Como se preparar para uma cirurgia plástica: guia para pacientes</h1>
+
+          <p class="post-excerpt">Descubra como a preparação física, emocional e logística faz toda diferença para o sucesso da sua cirurgia plástica. Prepare-se com segurança e tranquilidade!</p>
+
+          <div class="post-meta">
+            4/9/2026 • por Arlete Chagas
+          </div>
+
+          <div class="post-cover">
+            <img src="/img/pexels-photo-13697933.jpeg" alt="Como se preparar para uma cirurgia plástica: guia para pacientes">
+          </div>
+
+          <div class="post-content">
+            
+
+<p>Pensar em realizar uma cirurgia plástica envolve muitos fatores, desde a motivação pessoal até o entendimento dos riscos e dos preparativos necessários. Seja para fins estéticos ou reparadores, o processo requer planejamento e informação para garantir a segurança e o sucesso dos resultados.<br><br>Entender o que esperar do procedimento e conhecer as etapas de preparação é fundamental para quem deseja passar por essa experiência com tranquilidade. Neste artigo, vamos explorar os principais pontos que você deve considerar antes, durante e após a cirurgia, trazendo orientações práticas para ajudar na sua jornada. Continue lendo e descubra como se preparar de forma consciente e responsável!</p>
+
+<h2>Entendendo a cirurgia plástica: tipos e expectativas</h2>
+
+<p>Ao considerar um procedimento, é importante diferenciar os vários tipos disponíveis, como cirurgias estéticas (rinoplastia, lipoaspiração) e reparadoras (correção de malformações ou sequelas). Compreender o objetivo da cirurgia e alinhar suas expectativas com a realidade são passos essenciais para a satisfação com os resultados.<br><br>Uma boa conversa com o cirurgião ajuda a esclarecer dúvidas e determina se suas expectativas estão condizentes com o que o procedimento pode oferecer. Buscar profissionais experientes, como os especialistas em <a href="https://ocirurgiaoplasticocuritiba.com.br">Cirurgia Plástica Curitiba</a>, garante maior segurança e orientação adequada, tornando o processo mais transparente e seguro para o paciente.</p>
+
+<h2>Preparação física para a cirurgia: dieta e cuidados essenciais</h2>
+
+<p>Adotar hábitos saudáveis nas semanas que antecedem a cirurgia pode ser determinante para o bom andamento do pós-operatório. Manter uma alimentação equilibrada, rica em nutrientes, facilita a cicatrização e fortalece a imunidade, reduzindo possíveis complicações.<br><br>Além disso, seguir as recomendações médicas quanto ao uso de medicamentos e evitar substâncias como álcool e cigarros potencializa a recuperação. Manter-se hidratado e praticar atividades físicas leves também pode colaborar nos resultados. Informar-se sobre restrições específicas com seu médico faz parte dessa etapa e traz confiança para seguir o plano pré-operatório, promovendo um ambiente físico propício à cirurgia.</p>
+
+
+<div class="content-inline-related">
+  <span class="content-inline-related-label">Veja mais:</span>
+  <a href="https://quatrodigital.com.br/agencia-marketing-medico-sao-paulo/" class="content-inline-related-link">Agência de Marketing Médico em São Paulo: O que Considerar</a>
+</div>
+
+<h2>Preparação emocional: como lidar com ansiedade e medos</h2>
+
+<p>Enfrentar uma cirurgia plástica naturalmente desperta emoções intensas, como ansiedade e medo do desconhecido. Antes do procedimento, é importante reconhecer e conversar sobre esses sentimentos, seja com familiares, amigos ou profissionais da saúde mental.<br><br>Construir uma relação de confiança com seu cirurgião é fundamental para esclarecer dúvidas e reduzir inseguranças. Práticas como meditação e respiração profunda podem ajudar no controle emocional nos dias que antecedem a cirurgia. Informar-se sobre o processo, visualizar os benefícios e entender que o nervosismo é normal faz parte da preparação. Assim, você cria um ambiente interno mais calmo e seguro para viver essa etapa.</p>
+
+<h2>O que levar para o hospital e cuidados pré-operatórios</h2>
+
+<p>Separar uma pequena mala com tudo o que facilitará seu conforto e recuperação no hospital é essencial. Invista em roupas leves, fáceis de vestir e que não comprimam o local operado. Não esqueça itens pessoais de higiene, documentos, exames solicitados pelo médico e seus medicamentos de uso regular.<br><br>É recomendado chegar ao hospital acompanhado de alguém de confiança. Seguir as orientações para jejum, suspender maquiagens e adornos, além de preparar o lar para o retorno, também é parte dessa fase. Essas pequenas atenções tornam sua experiência mais tranquila e reduzem contratempos no pré e pós-operatório imediato.</p>
+
+
+<div class="content-inline-related">
+  <span class="content-inline-related-label">Veja mais:</span>
+  <a href="https://quatrodigital.com.br/quanto-custa-agencia-marketing-dentistas/" class="content-inline-related-link">Quanto Custa uma Agência de Marketing para Dentistas?</a>
+</div>
+
+<h2>Orientações pós-cirúrgicas para uma recuperação tranquila</h2>
+
+<p>Os cuidados após a cirurgia plástica são determinantes para o sucesso do procedimento. Seguir fielmente todas as recomendações do cirurgião, como uso de cintas ou curativos, repouso na medida certa e administração correta de medicamentos, é fundamental.<br><br>Evitar esforços, exposição solar e atividades físicas intensas nas primeiras semanas contribui para uma boa cicatrização e redução dos riscos de complicações. O acompanhamento médico regular é indispensável para monitorar a evolução do quadro e ajustar condutas quando necessário. Manter uma rotina de descanso e alimentação adequada acelera o processo de recuperação, levando a um resultado mais satisfatório e seguro.</p>
+
+<h2>Conclusão</h2>
+
+<p>Passar por uma cirurgia plástica envolve uma preparação completa, que engloba aspectos físicos, emocionais e logísticos. Ter clareza sobre os diferentes tipos de procedimentos, manter hábitos saudáveis, cuidar da mente e seguir as recomendações médicas são atitudes essenciais.<br><br>Pequenos detalhes, desde a preparação da mala até o respeito ao pós-operatório, fazem diferença significativa no resultado final. Contar com profissionais qualificados e buscar informações confiáveis são os pilares para garantir segurança e bem-estar durante toda a jornada. Planejamento e dedicação tornam o processo mais leve, seguro e favorecem uma recuperação tranquila, aproximando o paciente do resultado desejado.</p>
+          </div>
+
+          <div class="post-footer">
+            Última atualização: 4/9/2026
+          </div>
+
+          <section class="post-bottom">
+            <h2 class="section-title">Mais conteúdos para você</h2>
+            <div id="bottom-featured-posts">
+              <p class="loading-text">Carregando conteúdos...</p>
+            </div>
+          </section>
+        </article>
+
+        <aside class="post-sidebar">
+          <div class="sidebar-block">
+            <h2 class="section-title">Posts recentes</h2>
+            <div id="recent-posts">
+              <p class="loading-text">Carregando posts recentes...</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-tuasaude">
+      <div class="container footer-wrapper">
+        <a href="/" class="footer-logo">
+          <img src="/img/logo-blog.webp" alt="Quatro Digital" class="footer-logo__image">
+        </a>
+        <div class="footer-text">
+          Conteúdos informativos, atualizados e organizados para facilitar sua navegação e ajudar na busca por informação.
+        </div>
+        <div class="footer-menu">
+          <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/sobre/">Sobre</a></li>
+            <li><a href="/contato/">Contato</a></li>
+            <li><a href="/politica-de-privacidade/">Política de privacidade</a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <div class="footer-update-copy">
+            <span>© 2026 Quatro Digital</span>
+            <span class="dot"></span>
+            <span>Todos os direitos reservados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    async function fetchJson(path) {
+      const response = await fetch(path, { cache: 'no-cache' });
+      if (!response.ok) throw new Error('Erro ao carregar ' + path);
+      return response.json();
+    }
+
+    function escapeHtml(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function normalizePath(url) {
+      try {
+        const parsed = new URL(url, window.location.origin);
+        return parsed.pathname.replace(/\/+$/, '') || '/';
+      } catch {
+        return String(url || '')
+          .replace(window.location.origin, '')
+          .replace(/\/+$/, '') || '/';
+      }
+    }
+
+    function renderRecentPosts(posts) {
+      const container = document.getElementById('recent-posts');
+      if (!container) return;
+      if (!posts.length) {
+        container.innerHTML = '<p class="empty-text">Nenhum post recente encontrado.</p>';
+        return;
+      }
+      container.innerHTML = `
+        <ul class="sidebar-list">
+          ${posts.map(post => `
+            <li class="sidebar-item">
+              <a href="${escapeHtml(post.url)}" class="sidebar-link">${escapeHtml(post.title)}</a>
+              <span class="sidebar-meta">${escapeHtml(post.date || '')}${post.category ? ' • ' + escapeHtml(post.category) : ''}</span>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+    }
+
+    function renderBottomFeatured(posts) {
+      const container = document.getElementById('bottom-featured-posts');
+      if (!container) return;
+      if (!posts.length) {
+        container.innerHTML = '<p class="empty-text">Nenhum conteúdo adicional encontrado.</p>';
+        return;
+      }
+      container.innerHTML = `
+        <ul class="bottom-list">
+          ${posts.map(post => `
+            <li class="bottom-item">
+              <a href="${escapeHtml(post.url)}" class="bottom-link">${escapeHtml(post.title)}</a>
+              <span class="bottom-meta">${escapeHtml(post.date || '')}${post.category ? ' • ' + escapeHtml(post.category) : ''}</span>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+    }
+
+    async function loadDynamicPostWidgets() {
+      try {
+        const currentPath = normalizePath(window.location.pathname);
+        const [recentPostsRaw, featuredPostsRaw] = await Promise.all([
+          fetchJson('/data/recent-posts.json'),
+          fetchJson('/data/featured-posts.json')
+        ]);
+        const recentPosts = Array.isArray(recentPostsRaw) ? recentPostsRaw : [];
+        const featuredPosts = Array.isArray(featuredPostsRaw) ? featuredPostsRaw : [];
+        const filteredRecent = recentPosts.filter(post => normalizePath(post.url) !== currentPath).slice(0, 6);
+        const bottomFeatured = featuredPosts.filter(post => normalizePath(post.url) !== currentPath).slice(0, 12);
+        renderRecentPosts(filteredRecent);
+        renderBottomFeatured(bottomFeatured);
+      } catch (error) {
+        console.error(error);
+        const recentEl = document.getElementById('recent-posts');
+        const bottomEl = document.getElementById('bottom-featured-posts');
+        if (recentEl) recentEl.innerHTML = '<p class="empty-text">Não foi possível carregar os posts recentes.</p>';
+        if (bottomEl) bottomEl.innerHTML = '<p class="empty-text">Não foi possível carregar os conteúdos relacionados.</p>';
+      }
+    }
+
+    loadDynamicPostWidgets();
+  </script>
+</body>
+</html>
